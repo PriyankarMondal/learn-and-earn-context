@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.heroPanel {
+  flex: 1;
+  background-color: var(--color-primary-green);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-white);
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Simulate the background image shown in the design */
+.heroPanel::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  /* Using a generic office/building background, darkened and blended */
+  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: black;
+  width: max-content;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  gap: 0.5rem;
+  margin-bottom: 5rem;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  background: var(--color-accent-gold);
+  border-radius: 50%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.70rem;
+  line-height: 1;
+}
+
+.logoText strong {
+  color: var(--color-primary-green);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.logoText span {
+  color: var(--color-accent-gold);
+  font-weight: 700;
+}
+
+.textContent {
+  max-width: 500px;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #a3d922; /* Lighter green/yellowish tint */
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.statsContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  min-width: 180px;
+}
+
+.statCard h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.2rem 0;
+}
+
+.statCard p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.formPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  padding: 2rem;
+}
+
+.formWrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Responsive constraints */
+@media (max-width: 1024px) {
+  .heroPanel {
+    padding: 2rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .heroPanel {
+    min-height: 60vh;
+  }
+}
